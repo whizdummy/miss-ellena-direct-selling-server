@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test', function() {
+	$pdf = App::make('snappy.pdf.wrapper');
+	$pdf->loadHTML('<h1>Test</h1>');
+	
+	return $pdf->inline();
+});
