@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('report', 'PdfController@generate');
+
 Route::get('test', function() {
 	$pdf = App::make('snappy.pdf.wrapper');
 	$pdf->loadHTML('<h1>Test</h1>');
